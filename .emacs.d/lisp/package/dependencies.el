@@ -21,6 +21,7 @@
     rust-mode ;; for editing Rust code
     tern ;; IDE-level JS support
     tern-auto-complete ;; ac support with tern
+    buttercup ;; for tests
 
     ;; THEMES
     solarized-theme)
