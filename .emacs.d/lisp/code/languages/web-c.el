@@ -28,4 +28,7 @@
   (with-eval-after-load 'tern
     (tern-ac-setup)))
 
+(setq web-mode-content-types-alist
+  '(("jsx" . "\\.js[x]?\\'")))
+
 (provide 'web-c)

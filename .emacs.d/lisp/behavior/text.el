@@ -10,7 +10,8 @@
 (global-set-key (kbd "C-c SPC") #'ace-jump-mode)
 
 ;; save zapped chars to kill ring
-(setf ajz/zap-function #'kill-region)
+(with-eval-after-load 'ace-jump-zap
+  (setf ajz/zap-function #'kill-region))
 (global-set-key (kbd "M-z") #'ace-jump-zap-to-char)
 
 
@@ -46,5 +47,15 @@
 
 ;; Always delete trailing whitespace before saving.
 (add-hook 'before-save-hook #'delete-trailing-whitespace)
+
+(defun kotct/capitalize-word-without-downcase ()
+  "Capitalize from point to end of word, like `capitalize-word', but
+without downcasing the rest of the word after point."
+  (interactive)
+  (let (to-insert (upcase (char-after)))
+    (delete-char 1)
+    (insert to-insert)))
+
+(global-set-key (kbd "M-S-c") #'kotct/capitalize-word-without-downcase)
 
 (provide 'text)
