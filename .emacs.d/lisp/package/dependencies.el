@@ -22,6 +22,7 @@
     tern ;; IDE-level JS support
     tern-auto-complete ;; ac support with tern
     buttercup ;; for tests
+    ensime ;; scala IDE
 
     ;; THEMES
     solarized-theme)
